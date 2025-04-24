@@ -1,0 +1,15 @@
+<form method="POST" action="/past">
+  <input type="date" name="date" required>
+  <button type="submit">Search</button>
+</form>
+<% if (image) { %>
+  <img src="<%= image.url %>" alt="<%= image.title %>">
+  <h2><%= image.title %></h2>
+  <form method="POST" action="/save">
+    <input type="hidden" name="title" value="<%= image.title %>">
+    <input type="hidden" name="url" value="<%= image.url %>">
+    <input type="hidden" name="date" value="<%= image.date %>">
+    <input type="hidden" name="explanation" value="<%= image.explanation %>">
+    <button type="submit">Save</button>
+  </form>
+<% } %>
