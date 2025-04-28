@@ -1,0 +1,10 @@
+<% images.forEach(image => { %>
+  <div>
+    <h3><%= image.title %> (<%= image.date %>)</h3>
+    <img src="<%= image.url %>" width="400">
+    <form method="POST" action="/delete">
+      <input type="hidden" name="id" value="<%= image._id %>">
+      <button type="submit">Delete</button>
+    </form>
+  </div>
+<% }) %>

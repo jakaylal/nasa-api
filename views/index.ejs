@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>NASA Image of the Day</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/past">Choose a Date</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="/gallery">View Images</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <h1><%= nasaData.title %></h1>
+  <p><%= nasaData.date %></p>
+  <img src="<%= nasaData.url %>" alt="NASA Image" class="img-fluid" />
+  <p class="mt-3"><%= nasaData.explanation %></p>
+
+  <form action="/save" method="GET">
+    <input type="hidden" name="title" value="<%= nasaData.title %>">
+    <input type="hidden" name="url" value="<%= nasaData.url %>">
+    <input type="hidden" name="date" value="<%= nasaData.date %>">
+    <input type="hidden" name="explanation" value="<%= nasaData.explanation %>">
+    <button class="btn btn-primary mt-2" type="submit">Save Image</button>
+  </form>
+
+</body>
+</html>
