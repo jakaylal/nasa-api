@@ -51,7 +51,9 @@ app.get('/', async function(req, res) {
 
 app.post('/save', async function(req, res) {
   try {
+    console.log("Incoming req.body:", req.body);
     const imageData = req.body;
+    console.log("Saving image:", imageData);
     await nasaCollection.insertOne(imageData);
     res.redirect('/gallery');
   } catch (err) {
@@ -82,7 +84,8 @@ app.post('/delete', async function(req, res) {
 
 
 app.get('/past', function(req, res) {
-  res.render('date');
+  //res.render('date');
+  res.render('date', { nasaData: null });
 });
 
 

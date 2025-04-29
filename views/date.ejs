@@ -1,15 +1,15 @@
-<form method="POST" action="/past">
+<form method="POST" action="/date">
   <input type="date" name="date" required>
   <button type="submit">Search</button>
 </form>
-<% if (image) { %>
-  <img src="<%= image.url %>" alt="<%= image.title %>">
-  <h2><%= image.title %></h2>
+<% if (nasaData) { %>
+  <img src="<%= nasaData.url %>" alt="<%= nasaData.title %>">
+  <h2><%= nasaData.title %></h2>
   <form method="POST" action="/save">
-    <input type="hidden" name="title" value="<%= image.title %>">
-    <input type="hidden" name="url" value="<%= image.url %>">
-    <input type="hidden" name="date" value="<%= image.date %>">
-    <input type="hidden" name="explanation" value="<%= image.explanation %>">
+    <input type="hidden" name="title" value="<%= nasaData.title %>">
+    <input type="hidden" name="url" value="<%= nasaData.url %>">
+    <input type="hidden" name="date" value="<%= nasaData.date %>">
+    <input type="hidden" name="explanation" value="<%= nasaData.explanation %>">
     <button type="submit">Save</button>
   </form>
 <% } %>
