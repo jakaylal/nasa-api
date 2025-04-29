@@ -6,7 +6,8 @@ const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 
 const app = express();
 const nasaApi = "6EJCLDVLA695U90b1PyZZTZfbPC2HKmOeArS2rYs";
-const uri = "mongodb+srv://jakayla42105:19Uyh2cSPwBIwGDE@cluster0.vd9opls.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb+srv://your-username:your-password@your-cluster.mongodb.net/?retryWrites=true&w=majority&tls=true&tlsAllowInvalidCertificates=true&appName=Cluster0";
+//const uri = "mongodb+srv://jakayla42105:19Uyh2cSPwBIwGDE@cluster0.vd9opls.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 
 app.set('view engine', 'ejs');
